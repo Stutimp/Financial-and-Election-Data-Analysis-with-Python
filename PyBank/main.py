@@ -64,7 +64,7 @@ greatest_decrease = min(profit_loss_list)
 greatest_increase_month =months_list[profit_loss_list.index(greatest_increase)]
 greatest_decrease_month = months_list[profit_loss_list.index(greatest_decrease)]
 
-    #printing other financial metrics
+    #printing other financial metrics to the terminal
 print("Financial Analysis")
 print("-------------------------------")
 print(f"Total Months:  {months}")
@@ -74,6 +74,16 @@ print(f"Greatest Increase in Profits: {greatest_increase_month} (${greatest_incr
 print(f"Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease})")
   
 
+# Exporting the results inside the "analysis folder" as a text file
+output_file = os.path.join("analysis","Pybank_Analysis.txt")
+with open(output_file,"w") as txt_file:
+    txt_file.write("Financial Analysis\n")
+    txt_file.write("-------------------------------\n")
+    txt_file.write(f"Total Months: {months}\n")
+    txt_file.write(f"Total: $ {net} \n")
+    txt_file.write(f"Average Change: $ {sum(profit_loss_list)/ len(profit_loss_list):.2f}\n")
+    txt_file.write(f"Greatest Increase in Profits: {greatest_increase_month} (${greatest_increase})\n")
+    txt_file.write(f"Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease})\n")
 
 
 
