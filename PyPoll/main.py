@@ -79,6 +79,6 @@ with open(output_file,"w") as txt_file:
 
 
 
-#print the contents of the text file
+
 
 
